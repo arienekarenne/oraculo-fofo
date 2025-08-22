@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Oráculo Fofo</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff69b4;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    #resposta {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #8a2be2;
+      background-color: #ffe4e1;
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔮 Oráculo Fofo</h1>
+  <p>Digite como você está se sentindo:</p>
+  <input type="text" id="pergunta" placeholder="Ex: Estou ansiosa...">
+  <br>
+  <button onclick="consultarOraculo()">Consultar</button>
+  <div id="resposta"></div>
+
+  <script>
+    function consultarOraculo() {
+      const pergunta = document.getElementById("pergunta").value.toLowerCase();
+      let resposta = "";
+
+      if (pergunta.includes("ansiosa") || pergunta.includes("ansiedade")) {
+        resposta = "Respira fundo, florzinha 🌸. A calma que você procura já mora em você 🍃";
+      } else if (pergunta.includes("triste") || pergunta.includes("chorar")) {
+        resposta = "Você é feita de luz, mesmo nos dias nublados 🌧️. Tudo passa, e você floresce 🌻";
+      } else if (pergunta.includes("feliz") || pergunta.includes("alegre")) {
+        resposta = "Que delícia sentir essa alegria! Que ela se espalhe como confete no vento 🎉";
+      } else if (pergunta.includes("amor") || pergunta.includes("apaixonada")) {
+        resposta = "Seu coração é puro encanto 💖. O amor que você dá é o amor que volta ✨";
+      } else if (pergunta.includes("cansada") || pergunta.includes("exausta")) {
+        resposta = "Você merece descanso, afeto e dias leves ☁️. Se cuida com carinho 🤍";
+      } else if (pergunta.includes("esperança") || pergunta.includes("futuro")) {
+        resposta = "O seu tempo vai chegar, e será lindo 🌅. Confie no processo 🌈";
+      } else {
+        resposta = "Você é feita de sonhos e força — continue 🌠. O universo está ouvindo seu coração 💫";
+      }
+
+      document.getElementById("resposta").innerText = resposta;
+    }
+  </script>
+</body>
+</html>
